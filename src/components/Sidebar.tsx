@@ -117,52 +117,52 @@ export default function Sidebar({ filters, setFilters, applyFilters, clearFilter
           <label className="mb-3 block text-sm font-semibold text-zinc-800">
             Date Registered
           </label>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="relative">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6">
+            <div className="w-30 sm:w-full">
+              <div className="relative w-full">
                 <span className="absolute -top-2 left-2 bg-[#fcf8f7] px-2 text-xs font-medium text-blue-600">Date</span>
                 <input
                   id="start-date-input"
                   type="date"
-                  placeholder="Start"
+                  placeholder="dd/mm/yyyy"
                   value={filters.startDate}
                   onChange={(e) => updateFilter('startDate', e.target.value)}
-                  className=" w-full rounded-sm border-2 border-blue-600 bg-white px-2 py-2 pr-10 text-sm text-zinc-900 focus:outline-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                  className=" w-30 sm:w-full rounded-sm border-2 border-blue-600 bg-white pl-3 pr-12 py-2 text-sm text-zinc-900 focus:outline-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer"
                 />
                 <span 
                   onClick={() => {
                     const input = document.getElementById('start-date-input') as HTMLInputElement;
                     input?.showPicker?.();
                   }}
-                  className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-zinc-200 text-zinc-700 hover:bg-zinc-300"
+                  className="cursor-pointer absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-full bg-zinc-200 text-zinc-700 hover:bg-zinc-300"
                 >
                   <TbCalendarEvent className="h-5 w-5" />
                 </span>
               </div>
-              <div className="text-center text-xs text-zinc-600">Start Date</div>
+              <div className="w-full text-center text-xs text-zinc-600 mt-1">Start Date</div>
             </div>
-            <div>
-              <div className="relative">
+            <div className="w-30 sm:w-full">
+              <div className="relative w-full">
                 <span className="absolute -top-2 left-2 bg-[#fcf8f7] px-2 text-xs font-medium text-blue-600">Date</span>
                 <input
                   id="end-date-input"
                   type="date"
-                  placeholder="End"
+                  placeholder="dd/mm/yyyy"
                   value={filters.endDate}
                   onChange={(e) => updateFilter('endDate', e.target.value)}
-                  className="w-full rounded-sm border-2 border-blue-600 bg-white px-2 py-2 pr-10 text-sm text-zinc-900 focus:outline-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                  className="w-30 sm:w-full rounded-sm border-2 border-blue-600 bg-white pl-3 pr-12 py-2 text-sm text-zinc-900 focus:outline-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer"
                 />
                 <span 
                   onClick={() => {
                     const input = document.getElementById('end-date-input') as HTMLInputElement;
                     input?.showPicker?.();
                   }}
-                  className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-zinc-200 text-zinc-700 hover:bg-zinc-300"
+                  className="cursor-pointer absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-full bg-zinc-200 text-zinc-700 hover:bg-zinc-300"
                 >
                   <TbCalendarEvent className="h-5 w-5" />
                 </span>
               </div>
-              <div className="text-center text-xs text-zinc-600">End Date</div>
+              <div className="w-full text-center text-xs text-zinc-600 mt-1">End Date</div>
             </div>
           </div>
         </div>
